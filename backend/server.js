@@ -9,6 +9,10 @@ app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
 
+const authRoutes = require('./routers/authRoutes')
+
+app.use(authRoutes);
+
 mongoose
     .connect(process.env.MONGO_URI)
     .then(()=>{
